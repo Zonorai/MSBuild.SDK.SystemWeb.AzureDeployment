@@ -10,16 +10,16 @@ jobs:
     steps:
     - uses: actions/checkout@v1
       name: Checkout Code
-     
-    - name: Add msbuild to PATH
-      uses: microsoft/setup-msbuild@v1.0.2
-       
-    - name: Setup NuGet
+      
     - uses: nuget/setup-nuget@v1
+      name: Nuget Restore
       with:
        nuget-version: '5.x'
     - run: nuget restore msSdk.sln
- 
+    
+    - name: Add msbuild to PATH
+      uses: microsoft/setup-msbuild@v1.0.2
+      
     - name: Build and Publish Web App
       run: msbuild msSdk.sln /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile
  
