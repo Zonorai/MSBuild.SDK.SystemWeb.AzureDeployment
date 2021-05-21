@@ -21,10 +21,11 @@ jobs:
       uses: microsoft/setup-msbuild@v1.0.2
       
     - name: Build and Publish Web App
-      run: msbuild msSdk.sln /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile
+      run: msbuild msSdk.sln /t:Publish /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingeFile=true /p:PackageLocation="./artifacts"
  
     - name: 'Run Azure webapp deploy action using publish profile credentials'
       uses: azure/webapps-deploy@v2
       with:
         app-name: msSdkCiCd
         publish-profile: ${{ secrets.azureWebAppPublishProfile }}
+        
