@@ -16,9 +16,9 @@ jobs:
        
     - name: Setup NuGet
     - uses: nuget/setup-nuget@v1
-     
-    - name: Restore NuGet Packages
-      run: nuget restore msSdk.sln
+      with:
+       nuget-version: '5.x'
+    - run: nuget restore msSdk.sln
  
     - name: Build and Publish Web App
       run: msbuild msSdk.sln /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile
