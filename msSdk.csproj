@@ -15,13 +15,13 @@
     <Content Include="Global.asax" />
     <Content Include="libman.json" />
     <Content Include="Properties\launchSettings.json" />
-    <Content Include="Web.config" />
-    <Content Include="Web.Debug.config">
+    <!--<Content Include="Web.config" />-->
+    <!--<Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
-    </Content>
+    </Content>-->
     <Content Include="Content\Site.css" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
